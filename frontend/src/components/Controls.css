@@ -1,0 +1,254 @@
+.controls-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 20px;
+  background: white;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.control-section {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 20px;
+}
+
+.control-section:last-child {
+  border-bottom: none;
+}
+
+.control-section h3 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.control-section h4 {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+.control-group {
+  margin-bottom: 15px;
+}
+
+.control-group label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.control-group .value {
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #e0e0e0;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #45a049;
+}
+
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+  border: none;
+}
+
+.presets {
+  margin-top: 20px;
+}
+
+.presets label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.preset-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.preset-button {
+  padding: 8px 12px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  color: #333;
+}
+
+.preset-button:hover {
+  background: #e8f5e9;
+  border-color: #4CAF50;
+  color: #4CAF50;
+}
+
+.roi-section {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 6px;
+  border-bottom: none;
+}
+
+.roi-toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tool-button {
+  flex: 1;
+  padding: 10px 15px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tool-button.toggle.off {
+  background: #607d8b;
+}
+
+.tool-button.toggle.off:hover:not(:disabled) {
+  background: #546e7a;
+  box-shadow: 0 2px 8px rgba(96, 125, 139, 0.3);
+}
+
+.tool-button.toggle.on {
+  background: #4CAF50;
+}
+
+.tool-button:hover:not(:disabled) {
+  background: #45a049;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+.tool-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.tool-button.clear {
+  background: #f44336;
+}
+
+.tool-button.clear:hover:not(:disabled) {
+  background: #da190b;
+}
+
+.roi-info,
+.roi-stats {
+  background: white;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.roi-dimensions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #666;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.roi-hint {
+  padding: 15px;
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.roi-hint p {
+  margin: 0;
+  color: #856404;
+  font-size: 13px;
+}
+
+.instructions ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.instructions li {
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.instructions strong {
+  color: #333;
+}

@@ -1,0 +1,192 @@
+.uploader-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.upload-section {
+  flex-shrink: 0;
+}
+
+.dropzone {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.dropzone:hover {
+  border-color: #999;
+  background: #f0f0f0;
+}
+
+.dropzone.active {
+  border-color: #4CAF50;
+  background: #e8f5e9;
+}
+
+.dropzone.uploading {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.dropzone-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.upload-icon {
+  font-size: 48px;
+}
+
+.dropzone p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.file-types {
+  font-size: 12px;
+  color: #999;
+}
+
+.upload-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #4CAF50;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-message {
+  margin-top: 15px;
+  padding: 12px;
+  background: #ffebee;
+  border: 1px solid #ef5350;
+  border-radius: 4px;
+  color: #c62828;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.studies-section,
+.series-section {
+  flex: 1;
+  min-height: 0;
+}
+
+.studies-section h3,
+.series-section h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.empty-message {
+  color: #999;
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
+}
+
+.studies-list,
+.series-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.study-item,
+.series-item {
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.study-item:hover,
+.series-item:hover {
+  border-color: #4CAF50;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.study-item.selected {
+  border-color: #4CAF50;
+  background: #e8f5e9;
+}
+
+.study-info,
+.series-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.study-patient {
+  font-weight: 600;
+  color: #333;
+}
+
+.study-date,
+.study-series-count {
+  font-size: 13px;
+  color: #666;
+}
+
+.series-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.series-modality {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.series-format,
+.series-slices {
+  font-size: 12px;
+  color: #666;
+}
+
+.view-button {
+  padding: 8px 16px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.view-button:hover {
+  background: #45a049;
+}
