@@ -5,51 +5,91 @@ A browser-based 3D DICOM viewer built with Django (backend) and VTK.js (frontend
 ## Quick Start
 
 ### Prerequisites
+
 - Python 3.12.7
 - Node.js 22.14.0
-- Django 6.0.2 (inside virtual environment)
 - PostgreSQL (or SQLite for local dev)
 
 ### Running Locally
 
-1.  **Backend Setup**:
-    ```bash
-    cd backend
-    pip install -r requirements.txt
-    python manage.py migrate
-    python manage.py runserver
-    ```
+#### Method 1: Single Command Setup (Recommended)
 
-2.  **Frontend Setup**:
-    ```bash
-    cd frontend
-    npm install
-    npm run dev
-    ```
+1. **Install everything with one script (backend + frontend + migrations)**:
 
-3.  Access the application at `http://localhost:5173` (or relevant frontend port).
+   ```bash
+   chmod +x setup_project.sh
+   ./setup_project.sh
+   ```
+
+2. **Start backend**:
+
+   ```bash
+   cd backend
+   .venv/bin/python manage.py runserver
+   ```
+
+3. **Start frontend**:
+
+   ```bash
+   cd frontend
+   npm run dev
+   ```
+
+4. Access the application at `http://localhost:5173`.
+
+#### Method 2: Traditional Manual Setup
+
+1. **Backend setup**:
+
+   ```bash
+   cd backend
+   python -m venv .venv
+   .venv/bin/python -m pip install --upgrade pip
+   .venv/bin/python -m pip install -r requirements.txt
+   .venv/bin/python manage.py migrate
+   .venv/bin/python manage.py runserver
+   ```
+
+   On Windows (PowerShell), use:
+
+   ```powershell
+   cd backend
+   python -m venv .venv
+   .\.venv\Scripts\python -m pip install --upgrade pip
+   .\.venv\Scripts\python -m pip install -r requirements.txt
+   .\.venv\Scripts\python manage.py migrate
+   .\.venv\Scripts\python manage.py runserver
+   ```
+
+2. **Frontend setup**:
+
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+
+3. Access the application at `http://localhost:5173`.
 
 ## Architecture
 
--   **Backend**: Django + Django REST Framework. Handles DICOM file uploads, parsing (pydicom), metadata extraction, and volume generation.
--   **Frontend**: React (presumed) + VTK.js. Fetches volume data/slices and renders 3D views.
--   **Data Storage**:
-    -   DICOM files stored on filesystem (`media/dicoms/`).
-    -   Metadata stored in PostgreSQL/SQLite.
+- **Backend**: Django + Django REST Framework. Handles DICOM file uploads, parsing (pydicom), metadata extraction, and volume generation.
+- **Frontend**: React (presumed) + VTK.js. Fetches volume data/slices and renders 3D views.
+- **Data Storage**: DICOM files are stored on filesystem (`media/dicoms/`) and metadata is stored in PostgreSQL/SQLite.
 
 ## Features (MVP)
 
--   Upload DICOM study (folder of slices).
--   3D Volume Rendering.
--   MPR Views (Axial, Sagittal, Coronal).
--   Window/Level adjustment.
+- Upload DICOM study (folder of slices).
+- 3D Volume Rendering.
+- MPR Views (Axial, Sagittal, Coronal).
+- Window/Level adjustment.
 
 ## Known Limitations
 
--   Currently supports a single timepoint per series.
--   Large datasets (>500 slices) may require increased browser memory.
+- Currently supports a single timepoint per series.
+- Large datasets (>500 slices) may require increased browser memory.
 
 ## Testing
 
--   Backend: `pytest`
--   Frontend: `npm test`
+- Backend: `pytest`
+- Frontend: `npm test`
